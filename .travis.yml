@@ -1,14 +1,11 @@
 sudo: required
 
-addons:
-  apt:
-    packages:
-    - docker-engine
-
 services:
   - docker
 
 before_install:
+  - sudo apt-get update -q
+  - sudo apt-get install -y docker-engine
   - docker build -t maruos/dev .
 
 script:
