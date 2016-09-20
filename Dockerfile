@@ -13,10 +13,12 @@ RUN groupadd -g ${gid} ${group} \
 
 # drop root privileges
 USER ${user}
+WORKDIR /home/${user}
 
 # get repo
 RUN mkdir ~/.bin && echo 'export PATH=~/.bin:$PATH' > ~/.bashrc \
     && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo \
     && chmod a+x ~/.bin/repo
 
-WORKDIR /home/${user}
+# copy useful scripts
+COPY scripts/ scripts/
