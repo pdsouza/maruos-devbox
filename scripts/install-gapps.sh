@@ -156,22 +156,9 @@ adb reboot bootloader &>/dev/null || {
 }
 sleep 5
 
-iecho "Flashing TWRP..."
-fastboot flash recovery twrp*.img &>/dev/null || {
-    fecho "fastboot failed to flash TWRP recovery."
-    exit 1
-}
-
-iecho "Rebooting into system..."
-fastboot reboot &>/dev/null || {
-    fecho "fastboot failed to reboot into system."
-    exit 1
-}
-sleep 25
-
-iecho "Rebooting into recovery..."
-adb reboot recovery &>/dev/null || {
-    fecho "adb failed to reboot into recovery."
+iecho "Booting TWRP without replacing existing recovery..."
+fastboot boot twrp*.img &>/dev/null || {
+    fecho "fastboot failed to boot TWRP recovery."
     exit 1
 }
 sleep 25
