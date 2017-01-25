@@ -13,6 +13,7 @@ RUN groupadd -g ${gid} ${group} \
 
 # drop root privileges
 USER ${user}
+ENV USER=${user}
 WORKDIR /home/${user}
 
 # get repo
