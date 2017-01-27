@@ -149,6 +149,13 @@ if [ ! -e open_gapps* ] ; then
     dl "$(device_to_gapps_url $OPT_DEVICE)"
 fi
 
+iecho "Pushing gapps to /sdcard..."
+gapps_file=(open_gapps*) # expand glob in list
+adb push -p "$gapps_file" /sdcard/ || {
+    fecho "adb failed to push gapps to /sdcard/."
+    exit 1
+}
+
 iecho "Rebooting into bootloader..."
 adb reboot bootloader &>/dev/null || {
     fecho "adb failed to reboot into bootloader."
@@ -164,11 +171,6 @@ fastboot boot twrp*.img &>/dev/null || {
 sleep 25
 
 iecho "Installing gapps..."
-gapps_file=(open_gapps*) # expand glob in list
-adb push -p "$gapps_file" /sdcard/ || {
-    fecho "adb failed to push gapps to /sdcard/."
-    exit 1
-}
 adb shell twrp install "/sdcard/${gapps_file}" || {
     fecho "TWRP failed to install gapps."
     exit 1
