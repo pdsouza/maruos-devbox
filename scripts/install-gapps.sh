@@ -27,6 +27,7 @@ readonly DEPS="curl
 adb
 fastboot"
 
+
 readonly GAPPS_PERMS_SCRIPT="fix-open-gapps-permissions.sh"
 
 help () {
@@ -40,6 +41,7 @@ first!
 Supported devices:
 - hammerhead
 - bullhead
+- angler
 
 Usage: $(basename "$0") [OPTIONS]
 
@@ -69,6 +71,7 @@ device_to_twrp_url () {
     case "$device" in
         hammerhead) echo "https://dl.twrp.me/hammerhead/twrp-3.0.3-0-hammerhead.img" ;;
         bullhead)   echo "https://dl.twrp.me/bullhead/twrp-3.0.2-2-bullhead.img" ;;
+        angler)   echo "https://dl.twrp.me/angler/twrp-3.0.2-2-angler.img" ;;
         *) echo ""
     esac
 }
@@ -78,6 +81,7 @@ device_to_gapps_url () {
     case "$device" in
         hammerhead) echo "https://github.com/opengapps/arm/releases/download/20170112/open_gapps-arm-6.0-pico-20170112.zip" ;;
         bullhead)   echo "https://github.com/opengapps/arm64/releases/download/20170112/open_gapps-arm64-6.0-pico-20170112.zip" ;;
+        angler)     echo "https://github.com/opengapps/arm64/releases/download/20170112/open_gapps-arm64-6.0-pico-20170112.zip" ;;
         *) echo ""
     esac
 }
@@ -87,6 +91,7 @@ device_needs_gapps_perms_fix () {
     case "$device" in
         hammerhead) return -1 ;;
         bullhead) return 0 ;;
+        angler) return 0 ;;
         *) return -1 ;;
     esac
 }
