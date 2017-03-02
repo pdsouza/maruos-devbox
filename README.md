@@ -2,14 +2,29 @@
 
 [![Build Status](https://travis-ci.org/pdsouza/maruos-devbox.svg?branch=master)](https://travis-ci.org/pdsouza/maruos-devbox)
 
+Get the latest image:
+
     $ docker pull pdsouza/maruos-devbox
 
-### Contributing
+Basic usage:
+
+    $ docker run --privileged -it \
+        -v ~/path/to/$WORKSPACE:/var/maru \
+        pdsouza/maruos-devbox
+
+Fancy usage (custom hostname, USB access for adb/fastboot within container):
+
+    $ docker run --privileged -it \
+        -h my-cool-hostname \
+        -v /dev/bus/usb:/dev/bus/usb \
+        -v ~/path/to/$WORKSPACE:/var/maru \
+        pdsouza/maruos-devbox
+
+## Contributing
 
 See the [main Maru OS repository](https://github.com/maruos/maruos) for more
 info.
 
-### Licensing
+## Licensing
 
-This repository is licensed under the Apache License, Version 2.0. See
-[LICENSE](LICENSE) for the details.
+[Apache 2.0](LICENSE)
