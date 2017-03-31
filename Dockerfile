@@ -1,4 +1,4 @@
-FROM pdsouza/maruos:latest
+FROM pdsouza/maruos:nougat
 
 MAINTAINER Preetam D'Souza <preetamjdsouza@gmail.com>
 
