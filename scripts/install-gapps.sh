@@ -70,7 +70,7 @@ device_to_twrp_url () {
     local device="$1"
     case "$device" in
         hammerhead) echo "https://dl.twrp.me/hammerhead/twrp-3.0.3-0-hammerhead.img" ;;
-        bullhead)   echo "https://dl.twrp.me/bullhead/twrp-3.0.2-2-bullhead.img" ;;
+        bullhead)   echo "https://dl.twrp.me/bullhead/twrp-3.2.1-0-bullhead.img" ;;
         angler)   echo "https://dl.twrp.me/angler/twrp-3.0.2-2-angler.img" ;;
         *) echo ""
     esac
@@ -80,7 +80,7 @@ device_to_gapps_url () {
     local device="$1"
     case "$device" in
         hammerhead) echo "https://github.com/opengapps/arm/releases/download/20170112/open_gapps-arm-6.0-pico-20170112.zip" ;;
-        bullhead)   echo "https://github.com/opengapps/arm64/releases/download/20170112/open_gapps-arm64-6.0-pico-20170112.zip" ;;
+        bullhead)   echo "https://github.com/opengapps/arm64/releases/download/20180107/open_gapps-arm64-7.1-pico-20180107.zip" ;;
         angler)     echo "https://github.com/opengapps/arm64/releases/download/20170112/open_gapps-arm64-6.0-pico-20170112.zip" ;;
         *) echo ""
     esac
