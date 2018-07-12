@@ -4,7 +4,6 @@ services:
   - docker
 
 before_install:
-  - sudo apt-get update -q
   - docker build -t maruos/dev .
 
 script:
