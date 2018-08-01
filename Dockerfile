@@ -1,6 +1,4 @@
-FROM pdsouza/maruos:nougat
-
-MAINTAINER Preetam D'Souza <preetamjdsouza@gmail.com>
+FROM pdsouza/maruos:maru-0.5
 
 # create default user
 ARG user=dev
