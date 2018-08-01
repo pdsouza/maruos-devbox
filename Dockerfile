@@ -1,6 +1,4 @@
-FROM pdsouza/maruos:latest
-
-MAINTAINER Preetam D'Souza <preetamjdsouza@gmail.com>
+FROM pdsouza/maruos:maru-0.4
 
 # create default user
 ARG user=dev
