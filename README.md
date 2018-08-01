@@ -1,6 +1,7 @@
 # Docker Image for Maru OS Development
 
 [![Build Status](https://travis-ci.org/pdsouza/maruos-devbox.svg?branch=master)](https://travis-ci.org/pdsouza/maruos-devbox)
+[![Docker Pulls](https://img.shields.io/docker/pulls/pdsouza/maruos-devbox.svg)](https://hub.docker.com/r/pdsouza/maruos-devbox/)
 
 Get the latest image:
 
