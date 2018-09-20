@@ -1,11 +1,10 @@
-FROM pdsouza/maruos:latest
+FROM pdsouza/maruos:maru-0.6
 
 # extra deps
 RUN apt-get update && apt-get -q -y install \
     sudo \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
-
 
 # create default user
 ARG user=dev
