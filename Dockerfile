@@ -1,4 +1,11 @@
-FROM pdsouza/maruos:maru-0.6
+FROM pdsouza/maruos:latest
+
+# extra deps
+RUN apt-get update && apt-get -q -y install \
+    sudo \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/*
+
 
 # create default user
 ARG user=dev
@@ -7,7 +14,7 @@ ARG uid=1000
 ARG gid=1000
 RUN groupadd -g ${gid} ${group} \
     && useradd -u ${uid} -g ${gid} -m -s /bin/bash ${user} \
-    && echo "${user} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/90-marudev
+    && adduser ${user} sudo && echo "${user} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/90-marudev
 
 # drop root privileges
 USER ${user}
