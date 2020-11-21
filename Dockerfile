@@ -1,4 +1,4 @@
-FROM pdsouza/maruos:maru-0.6
+FROM pdsouza/maruos:maru-0.7
 
 # extra deps
 RUN apt-get update && apt-get -q -y install \
