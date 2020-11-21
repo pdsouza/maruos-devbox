@@ -5,7 +5,7 @@
 
 Get the latest image:
 
-    $ docker pull pdsouza/maruos-devbox
+    $ docker pull pdsouza/maruos-devbox:maru-0.7
 
 Basic usage:
 
