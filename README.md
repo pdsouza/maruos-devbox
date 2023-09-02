@@ -19,7 +19,7 @@ Fancy usage (custom hostname, USB access for adb/fastboot within container):
         -h my-cool-hostname \
         -v /dev/bus/usb:/dev/bus/usb \
         -v ~/path/to/$WORKSPACE:/var/maru \
-        pdsouza/maruos-devbox
+        pdsouza/maruos-devbox:maru-0.7
 
 ## Contributing
 
