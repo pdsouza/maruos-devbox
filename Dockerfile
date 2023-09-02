@@ -3,6 +3,7 @@ FROM pdsouza/maruos:maru-0.7
 # extra deps
 RUN apt-get update && apt-get -q -y install \
     sudo \
+&& apt-install libssl-dev -q -y \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 
